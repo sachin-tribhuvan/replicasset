@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myrs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mobile
+
+  template:
+    metadata:
+      labels:
+        app: mobile
+    spec:
+      containers:
+        - name: mob-cont
+          image: aarushtechnologies/app
+          ports:
+            - containerPort: 80
