@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: med-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: medical
+  ports:
+    - port: 80
+      targetPort: 80
